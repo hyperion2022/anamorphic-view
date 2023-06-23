@@ -1,0 +1,5 @@
+﻿  Source.cpp
+C:\Users\ancam\Desktop\anamorphic-view\UnityOpenCVSample\Source.cpp(35,31): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+C:\Users\ancam\Desktop\anamorphic-view\UnityOpenCVSample\Source.cpp(36,32): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+     Creating library C:\Users\ancam\Desktop\anamorphic-view\UnityOpenCVSample\x64\Debug\UnityOpenCVSample.lib and object C:\Users\ancam\Desktop\anamorphic-view\UnityOpenCVSample\x64\Debug\UnityOpenCVSample.exp
+  UnityOpenCVSample.vcxproj -> C:\Users\ancam\Desktop\anamorphic-view\UnityOpenCVSample\x64\Debug\UnityOpenCVSample.dll

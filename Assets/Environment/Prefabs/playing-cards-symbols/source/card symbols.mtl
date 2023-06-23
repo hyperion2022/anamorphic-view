@@ -1,0 +1,58 @@
+# Blender MTL File: 'card symbols.blend'
+# Material Count: 4
+
+newmtl Clubs
+Ns 225.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Bump textures\\card symbols_Clubs_Normal.png
+map_Kd textures\\card symbols_Clubs_BaseColor.png
+map_Ns textures\\card symbols_Clubs_Roughness.png
+refl textures\\card symbols_Clubs_Metallic.png
+
+newmtl Diamonds
+Ns 225.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Bump textures\\card symbols_Diamonds_Normal.png
+map_Kd textures\\card symbols_Diamonds_BaseColor.png
+map_Ns textures\\card symbols_Diamonds_Roughness.png
+refl textures\\card symbols_Diamonds_Metallic.png
+
+newmtl Hearts
+Ns 225.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Bump textures\\card symbols_Hearts_Normal.png
+map_Kd textures\\card symbols_Hearts_BaseColor.png
+map_Ns textures\\card symbols_Hearts_Roughness.png
+refl textures\\card symbols_Hearts_Metallic.png
+
+newmtl Spades
+Ns 225.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Bump textures\\card symbols_Spades_Normal.png
+map_Kd textures\\card symbols_Spades_BaseColor.png
+map_Ns textures\\card symbols_Spades_Roughness.png
+refl textures\\card symbols_Spades_Metallic.png

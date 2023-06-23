@@ -1,0 +1,2 @@
+C:\Users\ancam\Desktop\UnityOpenCVSample\x64\Release\UnityOpenCVSample.dll
+C:\Users\ancam\Desktop\anamorphic-view\UnityOpenCVSample\x64\Release\UnityOpenCVSample.dll
