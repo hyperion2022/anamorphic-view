@@ -15,6 +15,8 @@ public class ToggleURPFeature : MonoBehaviour
     {
         Debug.Log("Press 1 to activate/deactivate the anaglyph effect.");
         feature.rendererFeatures[0].SetActive(isActive);
+
+        foreach (GameObject o in spawnList) o.SetActive(false);
     }
 
     private void Update()
