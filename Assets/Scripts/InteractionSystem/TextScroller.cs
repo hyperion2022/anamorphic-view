@@ -43,7 +43,8 @@ public class TextScroller : MonoBehaviour
     private void OnEnable()
     {
         currentPage = 0;
-        updatePage(currentPage);
+        if (pageNumberText != null) { updatePage(currentPage); }
+        
     }
 
     void Update()

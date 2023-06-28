@@ -23,6 +23,7 @@ public class Interactor : MonoBehaviour
     
         if (_numFound > 0)
         {
+            Debug.Log(_numFound);
             _interactable = _colliders[0].GetComponent<IInteractable>();
 
             if (_interactable != null)

@@ -9,6 +9,7 @@ TagManager:
   - Heart
   - Spade
   - Club
+  - Interactable
   layers:
   - Default
   - TransparentFX

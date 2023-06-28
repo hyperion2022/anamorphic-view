@@ -126,6 +126,7 @@ namespace StarterAssets
 
         private int diamondCounter, heartCounter, spadeCounter, clubCounter;
         [SerializeField] AudioClip cardPickUpSound;
+        [SerializeField] AudioClip _13CardsPickUpSound;
         [SerializeField] GameObject diamondUI;
         [SerializeField] GameObject heartUI;
         [SerializeField] GameObject spadeUI;
@@ -134,6 +135,10 @@ namespace StarterAssets
         [SerializeField] GameObject heartPrize;
         [SerializeField] GameObject spadePrize;
         [SerializeField] GameObject clubPrize;
+        [SerializeField] GameObject diamondObject;
+        [SerializeField] GameObject heartObject;
+        [SerializeField] GameObject spadeObject;
+        [SerializeField] GameObject clubObject;
         private TextMeshProUGUI diamondProgressText, heartProgressText, spadeProgressText, clubProgressText;
         private TextMeshProUGUI diamondPrizeText, heartPrizeText, spadePrizeText, clubPrizeText;
 
@@ -179,6 +184,11 @@ namespace StarterAssets
             heartPrizeText = heartPrize.GetComponent<TextMeshProUGUI>();
             spadePrizeText = spadePrize.GetComponent<TextMeshProUGUI>();
             clubPrizeText = clubPrize.GetComponent<TextMeshProUGUI>();
+
+            diamondObject.SetActive(false);
+            heartObject.SetActive(false);
+            spadeObject.SetActive(false);
+            clubObject.SetActive(false);
         }
 
         private void Update()
@@ -434,6 +444,8 @@ namespace StarterAssets
                 {
                     diamondUI.SetActive(false);
                     diamondPrizeText.color = Color.red;
+                    diamondObject.SetActive(true);
+                    AudioSource.PlayClipAtPoint(_13CardsPickUpSound, transform.position, 1);
                     Debug.Log("You have all the DIAMOND cards!");
                 }
             }
@@ -449,6 +461,8 @@ namespace StarterAssets
                 {
                     heartUI.SetActive(false);
                     heartPrizeText.color = Color.red;
+                    heartObject.SetActive(true);
+                    AudioSource.PlayClipAtPoint(_13CardsPickUpSound, transform.position, 1);
                     Debug.Log("You have all the HEART cards!");
                 }
             }
@@ -464,6 +478,8 @@ namespace StarterAssets
                 {
                     spadeUI.SetActive(false);
                     spadePrizeText.color = Color.black;
+                    spadeObject.SetActive(true);
+                    AudioSource.PlayClipAtPoint(_13CardsPickUpSound, transform.position, 1);
                     Debug.Log("You have all the SPADE cards!");
                 }
             }
@@ -479,6 +495,8 @@ namespace StarterAssets
                 {
                     clubUI.SetActive(false);
                     clubPrizeText.color = Color.black;
+                    clubObject.SetActive(true);
+                    AudioSource.PlayClipAtPoint(_13CardsPickUpSound, transform.position, 1);
                     Debug.Log("You have all the CLUB cards!");
                 }
             }
