@@ -129,27 +129,40 @@ namespace StarterAssets
         [SerializeField] AudioClip cardPickUpSound;
         [SerializeField] AudioClip symbolPickUpSound;
         [SerializeField] AudioClip _13CardsPickUpSound;
+
         [SerializeField] GameObject diamondUI;
         [SerializeField] GameObject heartUI;
         [SerializeField] GameObject spadeUI;
         [SerializeField] GameObject clubUI;
+
         [SerializeField] GameObject diamondPrize;
         [SerializeField] GameObject heartPrize;
         [SerializeField] GameObject spadePrize;
         [SerializeField] GameObject clubPrize;
+
         [SerializeField] GameObject diamondObject;
         [SerializeField] GameObject heartObject;
         [SerializeField] GameObject spadeObject;
         [SerializeField] GameObject clubObject;
+
         [SerializeField] GameObject diamondSymbolUI;
         [SerializeField] GameObject heartSymbolUI;
         [SerializeField] GameObject spadeSymbolUI;
         [SerializeField] GameObject clubSymbolUI;
+
         [SerializeField] GameObject allSymbolsText;
         [SerializeField] GameObject houseOfCardsDoor;
+
         private TextMeshProUGUI diamondProgressText, heartProgressText, spadeProgressText, clubProgressText;
         private TextMeshProUGUI diamondPrizeText, heartPrizeText, spadePrizeText, clubPrizeText;
         private TextMeshProUGUI diamondSymbolText, heartSymbolText, spadeSymbolText, clubSymbolText;
+
+        private bool hasAllSymbols;
+
+        public bool PlayerHasAllSymbols()
+        {
+            return hasAllSymbols;
+        }
 
         private void Awake()
         {
@@ -205,6 +218,8 @@ namespace StarterAssets
             spadeObject.SetActive(false);
             clubObject.SetActive(false);
             allSymbolsText.SetActive(false);
+
+            hasAllSymbols = false;
         }
 
         private void Update()
@@ -526,6 +541,7 @@ namespace StarterAssets
                 diamondSymbolText.gameObject.SetActive(false);
                 if (symbolCounter == 4)
                 {
+                    hasAllSymbols = true;
                     allSymbolsText.SetActive(true);
                     Debug.Log("You win! Go to the POD to get your prize!");
                 }
@@ -539,6 +555,7 @@ namespace StarterAssets
                 heartSymbolText.gameObject.SetActive(false);
                 if (symbolCounter == 4)
                 {
+                    hasAllSymbols = true;
                     allSymbolsText.SetActive(true);
                     Debug.Log("You win! Go to the POD to get your prize!");
                 }
@@ -552,6 +569,7 @@ namespace StarterAssets
                 spadeSymbolText.gameObject.SetActive(false);
                 if (symbolCounter == 4)
                 {
+                    hasAllSymbols = true;
                     allSymbolsText.SetActive(true);
                     Debug.Log("You win! Go to the POD to get your prize!");
                 }
@@ -565,6 +583,7 @@ namespace StarterAssets
                 clubSymbolText.gameObject.SetActive(false);
                 if (symbolCounter == 4)
                 {
+                    hasAllSymbols = true;
                     allSymbolsText.SetActive(true);
                     Debug.Log("You win! Go to the POD to get your prize!");
                 }
