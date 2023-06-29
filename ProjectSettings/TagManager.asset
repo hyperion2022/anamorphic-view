@@ -10,6 +10,10 @@ TagManager:
   - Spade
   - Club
   - Interactable
+  - HeartSymbol
+  - DiamondSymbol
+  - SpadeSymbol
+  - ClubSymbol
   layers:
   - Default
   - TransparentFX

@@ -1,4 +1,5 @@
 ﻿using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 #if ENABLE_INPUT_SYSTEM && STARTER_ASSETS_PACKAGES_CHECKED
 using UnityEngine.InputSystem;
@@ -124,8 +125,9 @@ namespace StarterAssets
             }
         }
 
-        private int diamondCounter, heartCounter, spadeCounter, clubCounter;
+        private int diamondCounter, heartCounter, spadeCounter, clubCounter, symbolCounter;
         [SerializeField] AudioClip cardPickUpSound;
+        [SerializeField] AudioClip symbolPickUpSound;
         [SerializeField] AudioClip _13CardsPickUpSound;
         [SerializeField] GameObject diamondUI;
         [SerializeField] GameObject heartUI;
@@ -139,8 +141,15 @@ namespace StarterAssets
         [SerializeField] GameObject heartObject;
         [SerializeField] GameObject spadeObject;
         [SerializeField] GameObject clubObject;
+        [SerializeField] GameObject diamondSymbolUI;
+        [SerializeField] GameObject heartSymbolUI;
+        [SerializeField] GameObject spadeSymbolUI;
+        [SerializeField] GameObject clubSymbolUI;
+        [SerializeField] GameObject allSymbolsText;
+        [SerializeField] GameObject houseOfCardsDoor;
         private TextMeshProUGUI diamondProgressText, heartProgressText, spadeProgressText, clubProgressText;
         private TextMeshProUGUI diamondPrizeText, heartPrizeText, spadePrizeText, clubPrizeText;
+        private TextMeshProUGUI diamondSymbolText, heartSymbolText, spadeSymbolText, clubSymbolText;
 
         private void Awake()
         {
@@ -174,6 +183,7 @@ namespace StarterAssets
             heartCounter = 0;
             spadeCounter = 0;
             clubCounter = 0;
+            symbolCounter = 0;
 
             diamondProgressText = diamondUI.GetComponent<TextMeshProUGUI>();
             heartProgressText = heartUI.GetComponent<TextMeshProUGUI>();
@@ -185,10 +195,16 @@ namespace StarterAssets
             spadePrizeText = spadePrize.GetComponent<TextMeshProUGUI>();
             clubPrizeText = clubPrize.GetComponent<TextMeshProUGUI>();
 
+            diamondSymbolText = diamondSymbolUI.GetComponent<TextMeshProUGUI>();
+            heartSymbolText = heartSymbolUI.GetComponent<TextMeshProUGUI>();
+            spadeSymbolText = spadeSymbolUI.GetComponent<TextMeshProUGUI>();
+            clubSymbolText = clubSymbolUI.GetComponent<TextMeshProUGUI>();
+
             diamondObject.SetActive(false);
             heartObject.SetActive(false);
             spadeObject.SetActive(false);
             clubObject.SetActive(false);
+            allSymbolsText.SetActive(false);
         }
 
         private void Update()
@@ -476,6 +492,7 @@ namespace StarterAssets
                 spadeProgressText.text = "♠: " + spadeCounter + " / 13";
                 if (spadeCounter == 13)
                 {
+                    houseOfCardsDoor.SetActive(false);
                     spadeUI.SetActive(false);
                     spadePrizeText.color = Color.black;
                     spadeObject.SetActive(true);
@@ -498,6 +515,58 @@ namespace StarterAssets
                     clubObject.SetActive(true);
                     AudioSource.PlayClipAtPoint(_13CardsPickUpSound, transform.position, 1);
                     Debug.Log("You have all the CLUB cards!");
+                }
+            }
+            else if (hit.gameObject.CompareTag("DiamondSymbol"))
+            {
+                AudioSource.PlayClipAtPoint(symbolPickUpSound, transform.position, 1);
+                hit.gameObject.SetActive(false);
+
+                symbolCounter++;
+                diamondSymbolText.gameObject.SetActive(false);
+                if (symbolCounter == 4)
+                {
+                    allSymbolsText.SetActive(true);
+                    Debug.Log("You win! Go to the POD to get your prize!");
+                }
+            }
+            else if (hit.gameObject.CompareTag("HeartSymbol"))
+            {
+                AudioSource.PlayClipAtPoint(symbolPickUpSound, transform.position, 1);
+                hit.gameObject.SetActive(false);
+
+                symbolCounter++;
+                heartSymbolText.gameObject.SetActive(false);
+                if (symbolCounter == 4)
+                {
+                    allSymbolsText.SetActive(true);
+                    Debug.Log("You win! Go to the POD to get your prize!");
+                }
+            }
+            else if (hit.gameObject.CompareTag("SpadeSymbol"))
+            {
+                AudioSource.PlayClipAtPoint(symbolPickUpSound, transform.position, 1);
+                hit.gameObject.SetActive(false);
+
+                symbolCounter++;
+                spadeSymbolText.gameObject.SetActive(false);
+                if (symbolCounter == 4)
+                {
+                    allSymbolsText.SetActive(true);
+                    Debug.Log("You win! Go to the POD to get your prize!");
+                }
+            }
+            else if (hit.gameObject.CompareTag("ClubSymbol"))
+            {
+                AudioSource.PlayClipAtPoint(symbolPickUpSound, transform.position, 1);
+                hit.gameObject.SetActive(false);
+
+                symbolCounter++;
+                clubSymbolText.gameObject.SetActive(false);
+                if (symbolCounter == 4)
+                {
+                    allSymbolsText.SetActive(true);
+                    Debug.Log("You win! Go to the POD to get your prize!");
                 }
             }
         }

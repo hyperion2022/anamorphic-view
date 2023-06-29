@@ -1,10 +1,11 @@
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Rendering.Universal;
 
 public class ToggleURPFeature : MonoBehaviour
 {
-    public KeyCode toggleKey = KeyCode.Alpha1;
+    public MouseButton toggleButton = MouseButton.Right;
     bool isActive = false;
     [SerializeField] UniversalRendererData feature;
     [SerializeField] List<GameObject> despawnList;
@@ -13,7 +14,7 @@ public class ToggleURPFeature : MonoBehaviour
 
     private void Start()
     {
-        Debug.Log("Press 1 to activate/deactivate the anaglyph effect.");
+        Debug.Log("Press [Mouse Right] to activate/deactivate the anaglyph effect.");
         feature.rendererFeatures[0].SetActive(isActive);
 
         foreach (GameObject o in spawnList) o.SetActive(false);
@@ -21,7 +22,7 @@ public class ToggleURPFeature : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(toggleKey))
+        if (Input.GetMouseButtonDown((int)toggleButton))
         {
             isActive = !isActive;
 
